@@ -22,6 +22,6 @@ public class IndexController {
     }
     @RequestMapping("test")
     public String test(){
-        return "sdfsdfds123";
+        return "sdfsdfds12234243nnnn2";
     }
 }

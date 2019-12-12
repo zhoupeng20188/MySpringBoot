@@ -28,6 +28,9 @@
         <!--idea里还需要打开自动编译-->
         <!--然后ctrl+alt+shift+/,选择Registry-->
         <!--把compiler.automake.allow.when.app.running打勾-->
+        <!--还需要解决java compiler中java版本与实际java版本不一致的问题-->
+        <!--不然自动编译时会报错Error: java: Compilation failed: internal java compiler error-->
+        <!--报这个错时好像热更新时不时不起作用-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
