@@ -20,4 +20,8 @@ public class IndexController {
         response.sendRedirect("http://localhost:8080/token/me");
         return str;
     }
+    @RequestMapping("test")
+    public String test(){
+        return "sdfsdfds123";
+    }
 }

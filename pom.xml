@@ -24,6 +24,17 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
+        <!--热部署依赖-->
+        <!--idea里还需要打开自动编译-->
+        <!--然后ctrl+alt+shift+/,选择Registry-->
+        <!--把compiler.automake.allow.when.app.running打勾-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <scope>runtime</scope>
+            <optional>true</optional>
+        </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
