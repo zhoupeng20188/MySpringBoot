@@ -4,6 +4,8 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
 /**
+ * @ConfigurationProperties与@Value主要区别为@Value只能为一个变量赋值，
+ * @ConfigurationProperties只可以批量赋值
  * @Author zp
  * @create 2019/12/13 14:30
  */
