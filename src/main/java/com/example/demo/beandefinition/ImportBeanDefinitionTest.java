@@ -6,6 +6,7 @@ import org.springframework.context.annotation.ClassPathScanningCandidateComponen
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.ImportBeanDefinitionRegistrar;
 import org.springframework.core.type.AnnotationMetadata;
+import org.springframework.core.type.filter.AnnotationTypeFilter;
 import org.springframework.core.type.filter.AssignableTypeFilter;
 import org.springframework.core.type.filter.TypeFilter;
 import org.springframework.util.MultiValueMap;
@@ -24,7 +25,14 @@ public class ImportBeanDefinitionTest implements ImportBeanDefinitionRegistrar {
     public void registerBeanDefinitions(AnnotationMetadata annotationMetadata, BeanDefinitionRegistry beanDefinitionRegistry) {
         Map<String, Object> annotationAttributes = annotationMetadata.getAnnotationAttributes(ComponentScan.class.getName());
         String[] basePackages = (String[]) annotationAttributes.get("basePackages");
+        // ClassPathScanningCandidateComponentProvider是Spring提供的工具，
+        // 可以按自定义的类型，查找classpath下符合要求的class文件。
+        // true：默认TypeFilter生效，这种模式会查询出许多不符合你要求的class名
+        // false：关闭默认TypeFilter
         ClassPathScanningCandidateComponentProvider classPathScanningCandidateComponentProvider = new ClassPathScanningCandidateComponentProvider(false);
+        // 扫描带有自定义注解的类
+//        new AnnotationTypeFilter(ScanAnnotation.class)
+        // 接口不会被扫描，其子类会被扫描出来
         TypeFilter filter = new AssignableTypeFilter(Animal.class);
         classPathScanningCandidateComponentProvider.addIncludeFilter(filter);
         for (String basePackage : basePackages) {
