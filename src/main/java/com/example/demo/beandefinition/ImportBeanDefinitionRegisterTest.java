@@ -18,7 +18,7 @@ import java.util.Set;
  * @create 2020/1/6 11:14
  */
 
-public class ImportBeanDefinitionTest implements ImportBeanDefinitionRegistrar {
+public class ImportBeanDefinitionRegisterTest implements ImportBeanDefinitionRegistrar {
     @Override
     public void registerBeanDefinitions(AnnotationMetadata annotationMetadata, BeanDefinitionRegistry beanDefinitionRegistry) {
         Map<String, Object> annotationAttributes = annotationMetadata.getAnnotationAttributes(ComponentScan.class.getName());

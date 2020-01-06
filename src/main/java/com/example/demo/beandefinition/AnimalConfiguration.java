@@ -10,6 +10,6 @@ import org.springframework.context.annotation.Import;
  */
 @Configuration
 @ComponentScan("com.example.demo.beandefinition")
-@Import(ImportBeanDefinitionTest.class)
+@Import(ImportBeanDefinitionRegisterTest.class)
 public class AnimalConfiguration {
 }

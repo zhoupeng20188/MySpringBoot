@@ -14,9 +14,10 @@ import org.springframework.context.annotation.Configuration;
 public class BeanFactoryPostProcessorTest implements BeanFactoryPostProcessor {
     @Override
     public void postProcessBeanFactory(ConfigurableListableBeanFactory configurableListableBeanFactory) throws BeansException {
+        System.out.println("============BeanFactoryPostProcessor postProcessBeanFactory enter============");
         // 在这个方法里可以在生成BeanDefinition对象后改变bean的属性
         TestBeanFactory testBeanFactory = configurableListableBeanFactory.getBean(TestBeanFactory.class);
-        testBeanFactory.setName("BeanFactoryChanged");
+        testBeanFactory.setName("BeanFactoryChanged by BeanFactoryPostProcessor");
 
     }
 }

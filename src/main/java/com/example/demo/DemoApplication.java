@@ -4,10 +4,10 @@ import com.example.demo.bean.TestBean;
 import com.example.demo.bean.TestBean2;
 import com.example.demo.bean.TestBeanFactory;
 import com.example.demo.beandefinition.CatImpl;
+import com.example.demo.bean.CowImpl;
 import com.example.demo.beandefinition.DogImpl;
 import com.example.demo.listener.TestEvent;
 import com.example.demo.service.TestService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -39,8 +39,10 @@ public class DemoApplication {
         run.publishEvent(testEvent);
         CatImpl cat = run.getBean(CatImpl.class);
         DogImpl dog = run.getBean(DogImpl.class);
+        CowImpl cow = run.getBean(CowImpl.class);
         cat.go();
         dog.go();
+        cow.go();
         TestBeanFactory testBeanFactory = run.getBean(TestBeanFactory.class);
         System.out.println(testBeanFactory.getName());
     }
