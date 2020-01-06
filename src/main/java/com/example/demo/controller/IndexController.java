@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,6 +14,10 @@ import java.io.IOException;
  */
 @RestController
 public class IndexController {
+
+    @Value("${app.name}")
+    private String appName;
+
     @RequestMapping("/redirect/me")
     public String index(HttpServletResponse response) throws IOException {
         String str = "i am 8099 port!";
