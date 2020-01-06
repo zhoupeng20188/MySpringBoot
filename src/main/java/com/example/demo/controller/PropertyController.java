@@ -1,8 +1,9 @@
 package com.example.demo.controller;
 
-import com.example.demo.property.PropertyTest;
+import com.example.demo.property.ConfigurationPropertiesTest;
+import com.example.demo.property.PropertySourceConfigurationTest;
+import com.example.demo.property.PropertySourceValueTest;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,11 +15,27 @@ import org.springframework.web.bind.annotation.RestController;
 //@EnableConfigurationProperties(PropertyTest.class)
 public class PropertyController {
     @Autowired
-    PropertyTest propertyTest;
+    ConfigurationPropertiesTest configurationPropertiesTest;
+
+    @Autowired
+    PropertySourceValueTest propertySourceValueTest;
+
+    @Autowired
+    PropertySourceConfigurationTest propertySourceConfigurationTest;
 
     @RequestMapping("/getAppId")
     public String getAppId(){
-        return propertyTest.getId();
+        return configurationPropertiesTest.getId();
+    }
+
+    @RequestMapping("/getName")
+    public String getName(){
+        return propertySourceValueTest.getName();
+    }
+
+    @RequestMapping("/getAge")
+    public String getAge(){
+        return propertySourceConfigurationTest.getAge();
     }
 
 }

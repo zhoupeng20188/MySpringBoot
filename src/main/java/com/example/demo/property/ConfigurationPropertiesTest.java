@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 @ConfigurationProperties(prefix = "app")
-public class PropertyTest {
+public class ConfigurationPropertiesTest {
     private String id;
     private String name;
 
