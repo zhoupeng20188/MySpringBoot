@@ -2,6 +2,7 @@ package com.example.demo;
 
 import com.example.demo.bean.TestBean;
 import com.example.demo.bean.TestBean2;
+import com.example.demo.bean.TestBeanFactory;
 import com.example.demo.beandefinition.CatImpl;
 import com.example.demo.beandefinition.DogImpl;
 import com.example.demo.listener.TestEvent;
@@ -40,6 +41,8 @@ public class DemoApplication {
         DogImpl dog = run.getBean(DogImpl.class);
         cat.go();
         dog.go();
+        TestBeanFactory testBeanFactory = run.getBean(TestBeanFactory.class);
+        System.out.println(testBeanFactory.getName());
     }
 
 }
