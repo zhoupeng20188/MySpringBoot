@@ -71,6 +71,7 @@ public class ImportBeanDefinitionRegisterTest implements ImportBeanDefinitionReg
             for (Field field : res) {
                 Value value = field.getAnnotation(Value.class);
                 if (value != null) {
+                    System.out.println("@Value======================" + value.value());
                     ValueBean valueBean = new ValueBean();
                     valueBean.setClassName(candidateComponent.getBeanClassName());
                     valueBean.setFieldName(field.getName());

@@ -8,6 +8,7 @@ import com.example.demo.bean.CowImpl;
 import com.example.demo.beandefinition.DogImpl;
 import com.example.demo.listener.TestEvent;
 import com.example.demo.service.TestService;
+import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -45,6 +46,9 @@ public class DemoApplication {
         cow.go();
         TestBeanFactory testBeanFactory = run.getBean(TestBeanFactory.class);
         System.out.println(testBeanFactory.getName());
+        ConfigurableListableBeanFactory beanFactory = run.getBeanFactory();
+        String s = beanFactory.resolveEmbeddedValue("${app.name}");
+        System.out.println("${app.name}值为" + s);
     }
 
 }
