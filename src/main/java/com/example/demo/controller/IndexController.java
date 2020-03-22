@@ -1,5 +1,7 @@
 package com.example.demo.controller;
 
+import com.example.demo.pattern.ShoppingMall;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,6 +20,9 @@ public class IndexController {
     @Value("${app.name}")
     private String appName;
 
+    @Autowired
+    private ShoppingMall shoppingMall;
+
     @RequestMapping("/redirect/me")
     public String index(HttpServletResponse response) throws IOException {
         String str = "i am 8099 port!";
@@ -27,6 +32,9 @@ public class IndexController {
     }
     @RequestMapping("test")
     public String test(){
+        shoppingMall.shopping(1);
+        shoppingMall.shopping(2);
+        shoppingMall.shopping(3);
         return "sdfsdfds12234243nnnn2";
     }
 }
