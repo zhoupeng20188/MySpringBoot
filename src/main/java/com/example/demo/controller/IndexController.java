@@ -1,12 +1,11 @@
 package com.example.demo.controller;
 
-import com.example.demo.pattern.ShoppingMall;
+import com.example.demo.strategy.pattern.ShoppingMall;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 

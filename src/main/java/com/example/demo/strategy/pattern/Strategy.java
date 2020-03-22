@@ -1,4 +1,4 @@
-package com.example.demo.pattern;
+package com.example.demo.strategy.pattern;
 
 public interface Strategy {
     public boolean support(Integer i);
