@@ -15,12 +15,18 @@ import org.springframework.context.ConfigurableApplicationContext;
 
 /**
  * bean的执行顺序：
- * postProcessBeforeInstantiation -- InstantiationAwareBeanPostProcessor接口
+ * registerBeanDefinitions  --ImportBeanDefinitionRegistrar接口 --可以注册新的bean
+ * postProcessBeanDefinitionRegistry  --BeanDefinitionRegistryPostProcessor接口 --同上
+ * postProcessBeanFactory             --BeanDefinitionRegistryPostProcessor接口 --同下
+ * postProcessBeanFactory  --BeanFactoryPostProcessor接口 --可以获取bean的定义，修改bean
+ * postProcessBeforeInstantiation -- InstantiationAwareBeanPostProcessor接口 --bean实例化前
  * constructor --bean自身的构造函数
- * postProcessAfterInstantiation -- InstantiationAwareBeanPostProcessor接口
- * postProcessBeforeInitialization --BeanPostProcessor接口
+ * postProcessAfterInstantiation -- InstantiationAwareBeanPostProcessor接口 --bean实例化后
+ * xxAware设定
+ * postProcessBeforeInitialization --BeanPostProcessor接口 --bean初始化前
+ * PostConstruct --@PostConstruct注解
  * afterPropertiesSet -- bean实现的InitializingBean接口
- * postProcessAfterInitialization --BeanPostProcessor接口
+ * postProcessAfterInitialization --BeanPostProcessor接口 --bean初始化后
  */
 @SpringBootApplication
 public class DemoApplication {

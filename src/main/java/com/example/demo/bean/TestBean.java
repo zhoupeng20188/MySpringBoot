@@ -50,23 +50,23 @@ public class TestBean implements InitializingBean,BeanNameAware, BeanFactoryAwar
     @Override
     public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
 
-        System.out.println(System.currentTimeMillis() + " beanFactory is " + beanFactory);
+        System.out.println(System.currentTimeMillis() + " BeanFactoryAware set called ");
     }
 
     @Override
     public void setBeanName(String s) {
-        System.out.println(System.currentTimeMillis() + " beanName is " + s);
+        System.out.println(System.currentTimeMillis() + " BeanNameAware set called ");
     }
 
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
-        System.out.println(System.currentTimeMillis() + " applicationContext is " + applicationContext);
+        System.out.println(System.currentTimeMillis() + " ApplicationContextAware set called ");
 
     }
 
     @Override
     public void afterPropertiesSet() throws Exception {
-        System.out.println(System.currentTimeMillis() +  "afterPropertiesSet called");
+        System.out.println(System.currentTimeMillis() +  " InitializingBean afterPropertiesSet called");
     }
 
 
