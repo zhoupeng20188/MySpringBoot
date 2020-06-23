@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 public class MyBeanFactoryProcessor implements BeanFactoryPostProcessor {
     @Override
     public void postProcessBeanFactory(ConfigurableListableBeanFactory configurableListableBeanFactory) throws BeansException {
-        System.out.println(System.currentTimeMillis() + " MyBeanFactoryProcessor enter");
+        System.out.println(System.currentTimeMillis() + " BeanFactoryPostProcessor postProcessBeanFactory called");
         System.out.println(configurableListableBeanFactory.getBeanDefinition("testBean4").getScope());
     }
 }

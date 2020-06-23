@@ -15,7 +15,7 @@ public class MyInstantiationAwareBeanPostProcessor implements InstantiationAware
     public Object postProcessBeforeInstantiation(Class<?> beanClass, String beanName) throws BeansException {
         if (beanName.indexOf("test") != -1) {
             // 在bean的构造函数调用前执行
-            System.out.println(System.currentTimeMillis() +  beanName + " postProcessBeforeInstantiation called");
+            System.out.println(System.currentTimeMillis() +  beanName + " InstantiationAwareBeanPostProcessor postProcessBeforeInstantiation called");
         }
         return null;
     }
@@ -24,7 +24,7 @@ public class MyInstantiationAwareBeanPostProcessor implements InstantiationAware
     public boolean postProcessAfterInstantiation(Object bean, String beanName) throws BeansException {
         if (beanName.indexOf("test") != -1) {
             // 在bean的构造函数调用后执行
-            System.out.println(System.currentTimeMillis() + beanName + " postProcessAfterInstantiation called");
+            System.out.println(System.currentTimeMillis() + beanName + " InstantiationAwareBeanPostProcessor postProcessAfterInstantiation called");
         }
         return true;
     }

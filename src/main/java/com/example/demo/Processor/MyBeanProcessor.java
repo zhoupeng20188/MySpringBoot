@@ -17,7 +17,7 @@ public class MyBeanProcessor implements BeanPostProcessor {
         // bean初始化之前执行
         if (beanName.indexOf("test") != -1) {
 
-            System.out.println(System.currentTimeMillis() + ": Bean '" + beanName + "' created  before!~ ");
+            System.out.println(System.currentTimeMillis() + ": Bean '" + beanName + "' BeanPostProcessor postProcessBeforeInitialization called");
         }
         return bean; // 在这里其实可以返回任何对象
     }
@@ -27,7 +27,7 @@ public class MyBeanProcessor implements BeanPostProcessor {
         // 在bean初始化之后，打印toString()的内容到控制台
         if (beanName.indexOf("test") != -1) {
 
-            System.out.println(System.currentTimeMillis() + ": Bean '" + beanName + "' created : " + bean.toString());
+            System.out.println(System.currentTimeMillis() + ": Bean '" + beanName + "' BeanPostProcessor  postProcessAfterInitialization called");
         }
         return bean;
     }

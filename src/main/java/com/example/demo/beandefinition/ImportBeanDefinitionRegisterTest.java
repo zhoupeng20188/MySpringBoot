@@ -28,6 +28,7 @@ import java.util.*;
 public class ImportBeanDefinitionRegisterTest implements ImportBeanDefinitionRegistrar {
     @Override
     public void registerBeanDefinitions(AnnotationMetadata annotationMetadata, BeanDefinitionRegistry beanDefinitionRegistry) {
+        System.out.println("======ImportBeanDefinitionRegistrar registerBeanDefinitions called==============");
         Map<String, Object> annotationAttributes = annotationMetadata.getAnnotationAttributes(ComponentScan.class.getName());
         String[] basePackages = (String[]) annotationAttributes.get("basePackages");
         // ClassPathScanningCandidateComponentProvider是Spring提供的工具，
