@@ -6,6 +6,7 @@ import com.example.demo.bean.TestBeanFactory;
 import com.example.demo.beandefinition.CatImpl;
 import com.example.demo.bean.CowImpl;
 import com.example.demo.beandefinition.DogImpl;
+import com.example.demo.factorybean.OSBean;
 import com.example.demo.listener.TestEvent;
 import com.example.demo.service.TestService;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
@@ -55,6 +56,9 @@ public class DemoApplication {
         ConfigurableListableBeanFactory beanFactory = run.getBeanFactory();
         String s = beanFactory.resolveEmbeddedValue("${app.name}");
         System.out.println("${app.name}值为" + s);
+        OSBean osFactoryBean = (OSBean) run.getBean("osbean");
+        osFactoryBean.show();
+//        System.out.println(run.getBean("testFactoryBean"));
     }
 
 }
