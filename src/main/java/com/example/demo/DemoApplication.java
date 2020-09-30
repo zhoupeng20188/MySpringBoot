@@ -58,7 +58,8 @@ public class DemoApplication {
         System.out.println("${app.name}值为" + s);
         OSBean osFactoryBean = (OSBean) run.getBean("osbean");
         osFactoryBean.show();
-//        System.out.println(run.getBean("testFactoryBean"));
+        System.out.println(run.getBean("conditionalTestBean"));
+        System.out.println(run.getBean("conditionalTest"));
     }
 
 }
