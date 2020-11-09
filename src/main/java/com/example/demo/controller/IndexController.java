@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import com.example.demo.bean.AbstractSonBeanTest;
 import com.example.demo.strategy.pattern.ShoppingMall;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -22,6 +23,9 @@ public class IndexController {
     @Autowired
     private ShoppingMall shoppingMall;
 
+    @Autowired
+    private AbstractSonBeanTest abstractSonBeanTest;
+
     @RequestMapping("/redirect/me")
     public String index(HttpServletResponse response) throws IOException {
         String str = "i am 8099 port!";
@@ -35,5 +39,11 @@ public class IndexController {
         shoppingMall.shopping(2);
         shoppingMall.shopping(3);
         return "sdfsdfds12234243nnnn2";
+    }
+
+    @RequestMapping("test2")
+    public String test2(){
+        abstractSonBeanTest.test();
+        return "ok";
     }
 }

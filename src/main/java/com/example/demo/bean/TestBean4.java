@@ -15,6 +15,10 @@ public class TestBean4 implements ApplicationContextAware {
     private ApplicationContext applicationContext;
     private String catName;
 
+    public void test(){
+        System.out.println("i am testBean4");
+    }
+
     public String getCatName() {
         return catName;
     }
